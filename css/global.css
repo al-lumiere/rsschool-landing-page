@@ -2,7 +2,6 @@
 
 :root {
   color-scheme: light;
-
   --text-primary: light-dark(#403f3d, #e1d4c9);
   --text-inverse: light-dark(#e1d4c9, #e1d4c9);
   --text-accent: light-dark(#b0907a, #b0907a);
@@ -14,6 +13,7 @@
   );
   --border-primary: light-dark(#c1b6ad, #665f55);
   --border-inverse: light-dark(#665f55, #c1b6ad);
+  --page-padding: 40px;
 }
 
 :root[data-theme="light"] {
@@ -36,16 +36,16 @@ html {
 
 body {
   min-width: 380px;
-  padding: 20px 40px;
   margin: 0 auto;
   font-family: "Inter", sans-serif;
   color: var(--text-primary);
   background-color: var(--background-page);
+  padding: 20px var(--page-padding) 40px;
 }
 
 @media (max-width: 380px) {
-  body {
-    padding: 20px 16px 40px;
+  :root {
+    --page-padding: 16px;
   }
 }
 
