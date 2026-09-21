@@ -1,0 +1,431 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
+  max-width: 1360px;
+  margin: 20px auto 100px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 644px;
+  padding: 100px;
+  color: var(--text-inverse);
+  background: url("../assets/images/img-hero.jpg") center / cover no-repeat;
+  border-radius: 40px;
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 530px;
+  }
+
+  .heroButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 64px;
+    color: var(--text-primary);
+    background-color: var(--background-page);
+    border-radius: 100px;
+
+    &:hover {
+      text-decoration: none;
+      .heroButtonContent {
+        box-shadow: inset 0 -2px 0 currentColor;
+      }
+    }
+  }
+
+  .heroButtonContent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+
+  .coffeeIcon {
+    display: none;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+}
+.favoriteCoffee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  > h2 {
+    text-align: center;
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .sliderButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    color: var(--text-primary);
+    border: 1px solid var(--border-inverse);
+    border-radius: 50%;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover {
+      color: var(--text-inverse);
+      background-color: var(--background-container);
+    }
+
+    .arrowIcon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &.prev {
+      .arrowIcon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 480px;
+  }
+
+  .slide[hidden] {
+    display: none;
+  }
+
+  .slideImage {
+    width: 480px;
+    height: 480px;
+    object-fit: contain;
+  }
+
+  .slideInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sliderPagination {
+    display: flex;
+    gap: 12px;
+
+    span {
+      position: relative;
+      width: 40px;
+      height: 4px;
+      overflow: hidden;
+      background-color: var(--border-primary);
+      border-radius: 100px;
+    }
+
+    .active {
+      background-color: var(--border-inverse);
+    }
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  > h2 {
+    letter-spacing: -0.005em;
+  }
+
+  .aboutGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .aboutColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .aboutImage {
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+    }
+
+    &.large {
+      height: 590px;
+    }
+
+    &.small {
+      height: 430px;
+    }
+  }
+}
+
+.mobileApp {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+
+  .mobileContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 630px;
+  }
+
+  .storeButtons {
+    display: flex;
+    gap: 20px;
+  }
+
+  .storeButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 200px;
+    height: 64px;
+    padding: 12px 20px;
+    color: var(--text-primary);
+    border: 1px solid var(--border-inverse);
+    border-radius: 100px;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover {
+      color: var(--text-inverse);
+      background-color: var(--background-container);
+      text-decoration: none;
+    }
+  }
+
+  .storeIcon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .storeText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobileImage {
+    width: 100%;
+    max-width: 630px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    .heading-1 {
+      font-size: clamp(42px, calc(7.73vw + 12.6px), 72px);
+    }
+
+    .heading-2 {
+      font-size: clamp(32px, calc(7.22vw + 4.6px), 60px);
+    }
+  }
+
+  .hero {
+    padding: 100px clamp(16px, calc(11.34vw - 27px), 60px);
+
+    background-position: center;
+
+    .heroButton {
+      .coffeeIcon {
+        display: block;
+      }
+    }
+  }
+
+  .favoriteCoffee {
+    .slider {
+      display: grid;
+      grid-template-columns:
+        auto
+        minmax(0, 480px)
+        auto;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+    }
+
+    .sliderButton {
+      width: clamp(44px, 7.8125vw, 60px);
+      height: clamp(44px, 7.8125vw, 60px);
+
+      flex-shrink: 0;
+    }
+
+    .slide {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .slideImage {
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 1;
+    }
+  }
+
+  .about {
+    .aboutGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .aboutColumn {
+      &:first-child {
+        .small {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        .small {
+          display: none;
+        }
+      }
+
+      .large {
+        height: 590px;
+      }
+    }
+
+    .aboutColumn:last-child {
+      .large {
+        order: -1;
+      }
+    }
+  }
+
+  .mobileApp {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+
+    .mobileContent {
+      max-width: 100%;
+    }
+
+    .storeButtons {
+      flex-wrap: wrap;
+    }
+
+    .mobileImage {
+      align-self: center;
+
+      max-width: 630px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .home {
+    gap: 100px;
+    margin-top: 20px;
+  }
+
+  .hero {
+    min-height: 552px;
+    padding: 60px 16px;
+    background-position: center;
+
+    .heroContent {
+      gap: 40px;
+    }
+  }
+
+  .favoriteCoffee {
+    .slider {
+      display: flex;
+      justify-content: center;
+    }
+
+    .sliderButton {
+      display: none;
+    }
+
+    .slide {
+      width: 100%;
+    }
+
+    .slideImage {
+      width: 348px;
+      height: 348px;
+      aspect-ratio: auto;
+    }
+  }
+
+  .about {
+    .aboutGrid {
+      gap: 40px;
+    }
+
+    .aboutColumn {
+      gap: 40px;
+
+      .large {
+        height: 590px;
+      }
+    }
+  }
+
+  .mobileApp {
+    gap: 40px;
+
+    .mobileContent {
+      gap: 40px;
+    }
+
+    .storeButtons {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .mobileImage {
+      width: 100%;
+    }
+  }
+}
