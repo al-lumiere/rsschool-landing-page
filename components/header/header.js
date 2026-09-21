@@ -9,17 +9,12 @@ document.addEventListener("click", (event) => {
     }
 
     header.classList.toggle("menuOpen");
-
     const isOpen = header.classList.contains("menuOpen");
 
     burger.setAttribute("aria-expanded", String(isOpen));
-    burger.setAttribute(
-      "aria-label",
-      isOpen ? "Close menu" : "Open menu",
-    );
+    burger.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
 
     document.body.style.overflow = isOpen ? "hidden" : "";
-
     return;
   }
 
@@ -28,12 +23,9 @@ document.addEventListener("click", (event) => {
   if (mobileLink) {
     const header = mobileLink.closest(".header");
     const headerBurger = header?.querySelector(".burger");
-
     header?.classList.remove("menuOpen");
-
     headerBurger?.setAttribute("aria-expanded", "false");
     headerBurger?.setAttribute("aria-label", "Open menu");
-
     document.body.style.overflow = "";
   }
 });

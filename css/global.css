@@ -49,6 +49,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    --page-padding: clamp(16px, 5.21vw, 40px);
+  }
+}
+
 h1,
 h2,
 h3,

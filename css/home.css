@@ -83,6 +83,14 @@
     color: var(--text-primary);
     border: 1px solid var(--border-inverse);
     border-radius: 50%;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover {
+      color: var(--text-inverse);
+      background-color: var(--background-container);
+    }
 
     .arrowIcon {
       width: 24px;
@@ -102,6 +110,10 @@
     align-items: center;
     gap: 20px;
     width: 480px;
+  }
+
+  .slide[hidden] {
+    display: none;
   }
 
   .slideImage {
@@ -208,8 +220,13 @@
     color: var(--text-primary);
     border: 1px solid var(--border-inverse);
     border-radius: 100px;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
 
     &:hover {
+      color: var(--text-inverse);
+      background-color: var(--background-container);
       text-decoration: none;
     }
   }
@@ -237,8 +254,19 @@
 }
 
 @media (max-width: 768px) {
+  .home {
+    .heading-1 {
+      font-size: clamp(42px, calc(7.73vw + 12.6px), 72px);
+    }
+
+    .heading-2 {
+      font-size: clamp(32px, calc(7.22vw + 4.6px), 60px);
+    }
+  }
+
   .hero {
-    padding: 100px 60px;
+    padding: 100px clamp(16px, calc(11.34vw - 27px), 60px);
+
     background-position: center;
 
     .heroButton {
@@ -250,7 +278,35 @@
 
   .favoriteCoffee {
     .slider {
+      display: grid;
+      grid-template-columns:
+        auto
+        minmax(0, 480px)
+        auto;
+
+      align-items: center;
+      justify-content: space-between;
+
       gap: 12px;
+    }
+
+    .sliderButton {
+      width: clamp(44px, 7.8125vw, 60px);
+      height: clamp(44px, 7.8125vw, 60px);
+
+      flex-shrink: 0;
+    }
+
+    .slide {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .slideImage {
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 1;
     }
   }
 
@@ -293,8 +349,13 @@
       max-width: 100%;
     }
 
+    .storeButtons {
+      flex-wrap: wrap;
+    }
+
     .mobileImage {
       align-self: center;
+
       max-width: 630px;
     }
   }
@@ -318,6 +379,7 @@
 
   .favoriteCoffee {
     .slider {
+      display: flex;
       justify-content: center;
     }
 
@@ -332,6 +394,7 @@
     .slideImage {
       width: 348px;
       height: 348px;
+      aspect-ratio: auto;
     }
   }
 

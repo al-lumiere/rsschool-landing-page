@@ -56,3 +56,13 @@
     line-height: 1.25;
   }
 }
+
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: clamp(42px, 9.375vw, 72px);
+  }
+
+  .heading-2 {
+    font-size: clamp(32px, 7.8125vw, 60px);
+  }
+}

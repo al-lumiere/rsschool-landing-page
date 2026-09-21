@@ -1,7 +1,5 @@
 const root = document.documentElement;
-
 const savedTheme = localStorage.getItem("theme") || "light";
-
 root.dataset.theme = savedTheme;
 
 document.addEventListener("click", (event) => {
@@ -12,10 +10,7 @@ document.addEventListener("click", (event) => {
   }
 
   const currentTheme = root.dataset.theme;
-
   const nextTheme = currentTheme === "dark" ? "light" : "dark";
-
   root.dataset.theme = nextTheme;
-
   localStorage.setItem("theme", nextTheme);
 });
