@@ -122,6 +122,10 @@
       flex-shrink: 0;
     }
   }
+
+  .showMore[hidden] {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -137,10 +141,6 @@
     .menuGrid {
       grid-template-columns: repeat(2, 310px);
       justify-content: center;
-    }
-
-    .menuCard:nth-child(n + 5) {
-      display: none;
     }
 
     .showMore {
