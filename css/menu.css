@@ -147,7 +147,7 @@
   max-width: 800px;
   padding: 16px;
   color: var(--text-primary);
-  background-color: var(--background-page);
+  background-color: var(--background-modal);
   border-radius: 40px;
   max-height: calc(100dvh - 40px);
   overflow-y: auto;
