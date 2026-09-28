@@ -104,16 +104,24 @@
     }
   }
 
+  .sliderViewport {
+    width: 480px;
+    overflow: hidden;
+  }
+
+  .sliderTrack {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+
   .slide {
     display: flex;
+    flex: 0 0 100%;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 480px;
-  }
-
-  .slide[hidden] {
-    display: none;
+    width: 100%;
+    min-width: 0;
   }
 
   .slideImage {
@@ -135,17 +143,21 @@
     display: flex;
     gap: 12px;
 
-    span {
-      position: relative;
+    .paginationButton {
       width: 40px;
       height: 4px;
-      overflow: hidden;
-      background-color: var(--border-primary);
-      border-radius: 100px;
-    }
 
-    .active {
-      background-color: var(--border-inverse);
+      padding: 0;
+
+      background-color: var(--border-primary);
+
+      border-radius: 100px;
+
+      transition: background-color 0.3s ease;
+
+      &.active {
+        background-color: var(--border-inverse);
+      }
     }
   }
 }
@@ -290,6 +302,11 @@
       gap: 12px;
     }
 
+    .sliderViewport {
+      width: 100%;
+      min-width: 0;
+    }
+
     .sliderButton {
       width: clamp(44px, 7.8125vw, 60px);
       height: clamp(44px, 7.8125vw, 60px);
@@ -391,6 +408,10 @@
       width: 100%;
     }
 
+    .sliderViewport {
+      width: 100%;
+    }
+
     .slideImage {
       width: 348px;
       height: 348px;
@@ -427,5 +448,11 @@
     .mobileImage {
       width: 100%;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sliderTrack {
+    transition: none;
   }
 }
