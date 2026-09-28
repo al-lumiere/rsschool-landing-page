@@ -217,6 +217,7 @@
         width: 16px;
         height: 1px;
         background-color: var(--text-primary);
+        transition: transform 0.3s ease;
       }
 
       span:first-child {
@@ -293,7 +294,6 @@
           width: 16px;
           height: 1px;
           background-color: var(--text-primary);
-          transition: transform 0.3s ease;
         }
 
         span:first-child {

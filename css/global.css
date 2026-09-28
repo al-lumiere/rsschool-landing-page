@@ -44,15 +44,15 @@ body {
   padding: 20px var(--page-padding) 40px;
 }
 
-@media (max-width: 380px) {
-  :root {
-    --page-padding: 16px;
-  }
-}
-
 @media (max-width: 768px) {
   :root {
     --page-padding: clamp(16px, 5.21vw, 40px);
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --page-padding: 16px;
   }
 }
 

@@ -234,8 +234,8 @@
 
   &.active {
     color: var(--text-inverse);
-    background-color: var(--background-container);
-    border-color: var(--background-container);
+    background-color: var(--border-primary);
+    border-color: var(--border-primary);
 
     .optionKey {
       color: var(--text-primary);
