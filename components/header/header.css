@@ -21,18 +21,22 @@
   }
 
   .navigation {
-    margin-left: -50px;
+    margin-left: 0;
     ul {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: clamp(12px, 2.8vw, 40px);
+    }
+
+    a {
+      white-space: nowrap;
     }
   }
 
   .actions {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: clamp(12px, 1.7vw, 24px);
   }
 
   .themeSwitch {
@@ -213,6 +217,7 @@
         width: 16px;
         height: 1px;
         background-color: var(--text-primary);
+        transition: transform 0.3s ease;
       }
 
       span:first-child {
@@ -229,14 +234,23 @@
       z-index: 10;
       top: 100px;
       left: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
       width: 100%;
       height: calc(100dvh - 100px);
       padding: clamp(60px, 15dvh, 222px) var(--page-padding) 40px;
       box-sizing: border-box;
       background-color: var(--background-page);
-      align-items: flex-start;
-      justify-content: center;
       overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
 
       ul {
         display: flex;
@@ -268,10 +282,20 @@
 
     &.menuOpen {
       .mobileNavigation {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
       }
 
       .burger {
+        span {
+          position: absolute;
+          width: 16px;
+          height: 1px;
+          background-color: var(--text-primary);
+        }
+
         span:first-child {
           transform: rotate(45deg);
         }
