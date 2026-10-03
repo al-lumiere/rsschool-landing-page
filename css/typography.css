@@ -1,0 +1,68 @@
+.heading-1 {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.heading-2 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.heading-3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.text-medium {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.text-caption {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.linkButton {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.burger-link {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.accent {
+  color: var(--text-accent);
+  font-style: italic;
+}
+
+@media (max-width: 380px) {
+  .heading-1 {
+    font-size: 42px;
+    line-height: 1.15;
+  }
+
+  .heading-2 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: clamp(42px, 9.375vw, 72px);
+  }
+
+  .heading-2 {
+    font-size: clamp(32px, 7.8125vw, 60px);
+  }
+}
