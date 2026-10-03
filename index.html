@@ -24,6 +24,7 @@
     <script src="./js/components.js" defer></script>
     <script src="./js/theme.js" defer></script>
     <script src="./components/header/header.js" defer></script>
+    <script src="./js/slider.js" defer></script>
   </head>
 
   <body>
@@ -120,66 +121,64 @@
             </svg>
           </button>
 
-          <!-- Slide 1 -->
+          <div class="sliderViewport">
+            <div class="sliderTrack">
+              <div class="slide">
+                <img
+                  class="slideImage"
+                  src="./assets/images/coffee-slider-1.png"
+                  alt="S’mores Frappuccino"
+                />
 
-          <div class="slide">
-            <img
-              class="slideImage"
-              src="./assets/images/coffee-slider-1.png"
-              alt="S’mores Frappuccino"
-            />
+                <div class="slideInfo">
+                  <h3 class="heading-3">S’mores Frappuccino</h3>
 
-            <div class="slideInfo">
-              <h3 class="heading-3">S’mores Frappuccino</h3>
+                  <p class="text-medium">
+                    This new drink takes an espresso and mixes it with brown
+                    sugar and cinnamon before being topped with oat milk.
+                  </p>
 
-              <p class="text-medium">
-                This new drink takes an espresso and mixes it with brown sugar
-                and cinnamon before being topped with oat milk.
-              </p>
+                  <p class="heading-3">$5.50</p>
+                </div>
+              </div>
 
-              <p class="heading-3">$5.50</p>
-            </div>
-          </div>
+              <div class="slide">
+                <img
+                  class="slideImage"
+                  src="./assets/images/coffee-slider-2.png"
+                  alt="Caramel Macchiato"
+                />
 
-          <!-- Slide 2 -->
+                <div class="slideInfo">
+                  <h3 class="heading-3">Caramel Macchiato</h3>
 
-          <div class="slide" hidden>
-            <img
-              class="slideImage"
-              src="./assets/images/coffee-slider-2.png"
-              alt="Caramel Macchiato"
-            />
+                  <p class="text-medium">
+                    Fragrant and unique classic espresso with rich
+                    caramel-peanut syrup, with cream under whipped thick foam.
+                  </p>
 
-            <div class="slideInfo">
-              <h3 class="heading-3">Caramel Macchiato</h3>
+                  <p class="heading-3">$5.00</p>
+                </div>
+              </div>
 
-              <p class="text-medium">
-                Fragrant and unique classic espresso with rich caramel-peanut
-                syrup, with cream under whipped thick foam.
-              </p>
+              <div class="slide">
+                <img
+                  class="slideImage"
+                  src="./assets/images/coffee-slider-3.png"
+                  alt="Ice coffee"
+                />
 
-              <p class="heading-3">$5.00</p>
-            </div>
-          </div>
+                <div class="slideInfo">
+                  <h3 class="heading-3">Ice coffee</h3>
 
-          <!-- Slide 3 -->
+                  <p class="text-medium">
+                    A popular summer drink that tones and invigorates. Prepared
+                    from coffee, milk and ice.
+                  </p>
 
-          <div class="slide" hidden>
-            <img
-              class="slideImage"
-              src="./assets/images/coffee-slider-3.png"
-              alt="Ice coffee"
-            />
-
-            <div class="slideInfo">
-              <h3 class="heading-3">Ice coffee</h3>
-
-              <p class="text-medium">
-                A popular summer drink that tones and invigorates. Prepared from
-                coffee, milk and ice.
-              </p>
-
-              <p class="heading-3">$4.50</p>
+                  <p class="heading-3">$4.50</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -204,10 +203,25 @@
           </button>
         </div>
 
-        <div class="sliderPagination" aria-hidden="true">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
+        <div class="sliderPagination" aria-label="Coffee slider pagination" role="group">
+          <button
+            class="paginationButton active"
+            type="button"
+            aria-label="Show slide 1"
+            aria-current="true"
+          ></button>
+
+          <button
+            class="paginationButton"
+            type="button"
+            aria-label="Show slide 2"
+          ></button>
+
+          <button
+            class="paginationButton"
+            type="button"
+            aria-label="Show slide 3"
+          ></button>
         </div>
       </section>
 

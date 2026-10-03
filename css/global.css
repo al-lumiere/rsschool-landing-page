@@ -6,6 +6,7 @@
   --text-inverse: light-dark(#e1d4c9, #e1d4c9);
   --text-accent: light-dark(#b0907a, #b0907a);
   --background-page: light-dark(#e1d4c9, #292826);
+  --background-modal: light-dark(#e1d4c9, #403f3d);
   --background-container: light-dark(#665f55, #403f3d);
   --background-overlay: light-dark(
     rgba(64, 63, 61, 0.8),
@@ -43,15 +44,15 @@ body {
   padding: 20px var(--page-padding) 40px;
 }
 
-@media (max-width: 380px) {
-  :root {
-    --page-padding: 16px;
-  }
-}
-
 @media (max-width: 768px) {
   :root {
     --page-padding: clamp(16px, 5.21vw, 40px);
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --page-padding: 16px;
   }
 }
 
